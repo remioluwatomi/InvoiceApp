@@ -1,0 +1,23 @@
+appsettings*.json
+
+
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Dev-only config
+appsettings.Local.json
+
+# IDE settings (optional, depending on your team setup)
+.vscode/
+.idea/
+
+# Rider
+*.DotSettings.user
