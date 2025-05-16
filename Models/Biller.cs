@@ -9,6 +9,6 @@ public class Biller
     public required string PostCode { get; set; }
     public required string Country { get; set; }
 
-    // public virtual Invoice Invoice {get; set;}
+    public virtual Invoice? Invoice { get; set; }
 
 }
