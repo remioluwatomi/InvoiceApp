@@ -1,0 +1,8 @@
+@model InvoiceApp.Models.DTOs.ReceiptDTO;
+
+<button class="edit activity-btn">Edit</button>
+<button href="/delete" class="delete activity-btn">Delete</button>
+@if(Model.Status != "paid")
+{
+    <button href="/invoice-paid" class="mark-as-paid activity-btn">Mark as Paid</button>
+}
