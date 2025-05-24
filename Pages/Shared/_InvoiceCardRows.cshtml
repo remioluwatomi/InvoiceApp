@@ -1,0 +1,24 @@
+@model InvoiceApp.Pages.IndexModel
+
+<div class="invoice-row-wrapper">
+                
+                @foreach (var invoiceCard in Model.InvoiceCards)
+                {
+                    <a class="invoice-row" href="@($"/receipt?id={invoiceCard.Uid}")">
+                        <div class="l-wrapper">
+                            <span>#RT3090</span>
+                            <span>@invoiceCard.InvoiceDate</span>
+                            <span>@invoiceCard.ClientName</span>
+                        </div>
+
+                        <div class="r-wrapper">
+                            <div>
+                                <span class="amount">£ 1800.9</span>
+                                <partial name="Shared/_Status" model="@($"{invoiceCard.Status.ToString().ToLower()}")" />
+                            </div>
+                            <span><img src="/assets/icon-arrow-right.svg" alt="More details"/></span>
+                        </div>
+
+                    </a>
+                }
+            </div>

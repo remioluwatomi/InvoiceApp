@@ -1,10 +1,50 @@
 ﻿@page
-@model IndexModel
+@model InvoiceApp.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<partial name="Shared/_AddInvoiceForm" model="Model.InvoiceForm"/>
+
+        <div class="invoice-content">
+            <div class="heading-wrapper">
+                <h1>Invoices</h1>
+                <div>
+                    <button class="filter-opener"> Filter <span><img alt="Filter options" src="/assets/icon-arrow-down.svg"/></span></button>
+                    <div class="filter-box">
+                        <div class="filter-form-group">
+                            <input type="checkbox" id=draftcheckbox/>
+                            <label for="draftcheckbox">Draft</label>
+                        </div>
+
+                        <div class="filter-form-group">
+                            <input type="checkbox" id=pendingCheckBox/>
+                            <label for="pendingCheckBox">Pending</label>
+                        </div>
+
+                        <div class="filter-form-group">
+                            <input type="checkbox" id=paidCheckBox/>
+                            <label for="paidCheckBox">Paid</label>
+                        </div>
+
+                        <div class="filter-form-group">
+                            <input type="checkbox" id=allCheckBox/>
+                            <label for="allCheckBox">All</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="new-invoice-btn-wrapper">
+                    <button>
+                        <span>
+                            <img src="/assets/icon-plus.svg" alt="Plus icon for adding new invoice"/>
+                        </span>
+                        New Invoice
+                    </button>
+                </div>
+            </div>
+
+            <partial name="Shared/_InvoiceCardRows" />
+            
+        </div>
