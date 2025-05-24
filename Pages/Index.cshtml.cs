@@ -125,14 +125,14 @@ public class IndexModel : PageModel
 
             Invoice invoice = new()
             {
-            InvoiceDate = InvoiceForm.Invoice.InvoiceDate,
-            PaymentTerms = InvoiceForm.Invoice.PaymentTerms,
-            ProjectDescription = InvoiceForm.Invoice.ProjectDescription,
-            Status = InvoiceStatus.Pending,
-            Uid = Guid.NewGuid(),
-            Items = items,
-            Client = client,
-            Biller = biller,
+                InvoiceDate = InvoiceForm.Invoice.InvoiceDate,
+                PaymentTerms = InvoiceForm.Invoice.PaymentTerms,
+                ProjectDescription = InvoiceForm.Invoice.ProjectDescription,
+                Status = InvoiceStatus.Pending,
+                Uid = Guid.NewGuid(),
+                Items = items,
+                Client = client,
+                Biller = biller,
             };
 
 
@@ -147,7 +147,6 @@ public class IndexModel : PageModel
                 };
 
                 items.Add(itemModel);
-            
             };
 
             biller.Invoice = invoice;
