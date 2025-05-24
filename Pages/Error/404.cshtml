@@ -1,0 +1,18 @@
+﻿@page
+@model MyApp.Namespace._404Model
+
+
+@{
+	Layout = "/Pages/Shared/_ErrorLayout.cshtml";
+	ViewData["Title"] = "Error 404";
+}
+
+
+
+@section StatusCode {
+    <span class="code">404</span>
+}
+
+@section ErrorMessage {
+	<span class="text-2xl font-semibold md:text-3xl">Sorry this page doesn't exist.</span>
+}

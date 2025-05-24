@@ -1,0 +1,18 @@
+﻿@page
+@model MyApp.Namespace._500Model
+
+@{
+	Layout = "/Pages/Shared/_ErrorLayout.cshtml";
+	ViewData["Title"] = "Error 500";
+}
+
+
+
+@section StatusCode {
+    <span class="code">500</span>
+}
+
+@section ErrorMessage {
+	<span class="text-2xl font-semibold md:text-3xl">Internal Server Error</span>
+}
+

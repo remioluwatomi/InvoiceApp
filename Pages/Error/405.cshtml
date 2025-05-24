@@ -1,0 +1,18 @@
+﻿@page
+@model MyApp.Namespace._405Model
+
+@{
+	Layout = "/Pages/Shared/_ErrorLayout.cshtml";
+	ViewData["Title"] = "Error 405";
+}
+
+
+
+@section StatusCode {
+    <span class="code">405</span>
+}
+
+@section ErrorMessage {
+	<span class="text-2xl font-semibold md:text-3xl">Invalid method for this route.</span>
+}
+
