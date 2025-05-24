@@ -8,6 +8,8 @@ using InvoiceApp.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
 using InvoiceApp.Models.Forms;
 using System.Text.Json;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace InvoiceApp.Pages;
 
@@ -49,20 +51,12 @@ public class IndexModel : PageModel
         {
             string clName = invoice.Client.ClientName;
 
-            var invoiceItems = invoice.Items;
-            List<decimal> itemPrices = new();
-
-            foreach (var item in invoiceItems)
-            {
-                itemPrices.Add(item.Price);
-            }
-
             dtos.Add(new InvoiceCardDTO{
                 InvoiceDate = invoice.InvoiceDate,
                 Status = invoice.Status,
                 Uid = invoice.Uid,
                 ClientName = clName,
-                ItemsPrices = itemPrices
+                TotalPrice = invoice.Items.Sum(item => item.Price * item.Quantity)
             });
         }
 
