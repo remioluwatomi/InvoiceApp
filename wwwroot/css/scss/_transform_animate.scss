@@ -1,0 +1,21 @@
+aside.form-box {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
+
+  &.show {
+    transform: translateX(0);
+
+    @media (min-width: 1024px) {
+      transform: translateX(10%);
+    }
+  }
+}
+
+.new-item-btn {
+  transition: background-color ease-out 200ms, color ease-out 200ms;
+}
+
+.text-danger {
+  color: #d74747;
+  font-size: 0.95rem;
+}
