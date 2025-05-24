@@ -1,0 +1,129 @@
+.menu-aside {
+  @media (min-width: 1024px) {
+    .theme-mode-btn {
+      margin-right: auto;
+    }
+  }
+
+  .avatar-wrapper {
+    padding: 1.2rem 2rem 1rem;
+    margin-left: 1.5rem;
+
+    @media (min-width: 1023px) {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.invoice-content {
+  .heading-wrapper {
+    margin-top: 7vh;
+  }
+
+  div.new-invoice-btn-wrapper {
+    button {
+      padding: 0.5rem;
+    }
+  }
+
+  margin-left: auto;
+  margin-right: auto;
+
+  .i-status {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .filter-box .filter-form-group {
+    gap: 0.5rem;
+    margin: 0.1rem 0;
+
+    @media (min-width: 1024px) {
+      margin: 0.5rem 0.2rem;
+    }
+  }
+
+  .filter-box {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.invoice-row-wrapper {
+  margin-top: 5vh;
+
+  .invoice-row {
+    padding: 1.5rem 1.2rem;
+    margin: 1rem 0;
+
+    @media (min-width: 768px) {
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
+    }
+
+    .r-wrapper {
+      @media (min-width: 768px) {
+        div {
+          span:first-child {
+            padding: 0.3rem;
+          }
+        }
+
+        span:nth-child(2) {
+          padding: 0.5rem;
+        }
+      }
+    }
+
+    .l-wrapper {
+      span:nth-child(2) {
+        margin: 0.4rem 0 0.3rem;
+      }
+    }
+  }
+}
+
+//new invoice form
+
+aside.form-box {
+  // padding: 2rem 0;
+  padding: 3rem 1rem;
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding-bottom: 7rem;
+  }
+
+  form {
+    fieldset {
+      & > * {
+        margin: 0 auto;
+      }
+
+      & input {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+      }
+
+      .form-group {
+        margin: 1rem auto;
+      }
+    }
+  }
+}
+
+.form-footer-buttons-wrapper {
+  margin-top: 3rem;
+}
+
+.new-item-btn {
+  margin: 1rem auto;
+}
+
+h2 {
+  margin: 0.7rem auto;
+}

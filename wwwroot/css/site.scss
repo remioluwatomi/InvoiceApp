@@ -1,0 +1,63 @@
+@import "scss/layout";
+@import "scss/typography";
+@import "scss/background";
+@import "scss/spacing";
+@import "scss/sizing";
+@import "scss/transform_animate";
+@import "scss/receipt";
+
+html {
+  --brand-blue: #0d6efd;
+  --brand-indigo: #6610f2;
+  --brand-purple: #7c5dfa;
+  --brand-input-bg: rgba(43, 47, 75, .7);
+  --brand-orange: #fd7e14;
+  --brand-yellow: #ffc107;
+  --brand-green: #33d69f;
+  --brand-blue-heading: #2c3ded;
+  --brand-cyan: #0dcaf0;
+  --brand-white: #fff;
+  --brand-gray: #6c757d;
+  --brand-gray-dark: #343a40;
+  --brand-primary: #0d6efd;
+  --brand-secondary: #6c757d;
+  --brand-success: #198754;
+  --brand-info: #0dcaf0;
+  --brand-warning: #ffc107;
+  --brand-danger: #dc3545;
+  --brand-light: #f8f9fa;
+  --brand-dark: #212529;
+  --dark-bg: #141625;
+  --form-box-bg: #1E2139;
+  --brand-font-family: font-family: "League Spartan", serif;
+}
+
+html,
+body,
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--brand-font-family);
+  color: white;
+}
+
+* > button{
+  cursor: pointer;
+}
+
+* > fieldset, * > button, * > input{
+  border: none;
+  outline: none;
+}
+
+* > input:active{
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,3 +1,11 @@
+*.js
+*.js.map
+
+wwwroot/css/*.css
+wwwroot/css/*.css
+wwwroot/css/**/*.css.map
+
+
 appsettings*.json
 
 

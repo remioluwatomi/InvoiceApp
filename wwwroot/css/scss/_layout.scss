@@ -1,0 +1,186 @@
+.main-content-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  aside.menu-aside {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      img {
+        z-index: 1;
+      }
+
+      div {
+        position: absolute;
+        height: 50%;
+        // z-index: 10;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .theme-mode-btn {
+      display: inline-block;
+      margin-left: auto;
+    }
+
+    avatar-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      & {
+        position: fixed;
+        left: 0;
+        right: 90%;
+        flex-direction: column;
+      }
+
+      .theme-mode-btn {
+        margin-top: auto;
+      }
+
+      .avatar-wrapper {
+        width: 100%;
+      }
+    }
+  }
+
+  .invoice-box {
+    position: relative;
+    .invoice-content {
+      .heading-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div:nth-child(2) {
+          position: relative;
+
+          div.filter-box {
+            position: absolute;
+
+            .filter-form-group {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+div.invoice-row-wrapper {
+  .invoice-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .l-wrapper,
+    .r-wrapper {
+      display: flex;
+    }
+    .l-wrapper {
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+    }
+    .r-wrapper {
+      align-items: center;
+      margin-left: auto;
+      gap: 1.2rem;
+      div {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+          justify-content: end;
+          gap: 1rem;
+        }
+      }
+      span {
+        align-self: end;
+      }
+    }
+  }
+}
+
+.invoice-content {
+  div.new-invoice-btn-wrapper {
+    overflow: hidden;
+
+    & > button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0.6rem;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//new invoice form
+
+aside.form-box {
+  position: absolute;
+  z-index: 10;
+
+  &.show {
+    position: fixed;
+    overflow: scroll;
+  }
+
+  div.form-group {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      display: block;
+    }
+  }
+
+  div.mini-form-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.mini-form-wrapper {
+  align-items: center;
+}
+
+.form-footer-buttons-wrapper {
+  justify-content: space-around;
+}
+
+.button-wrapper .new-item-btn {
+  display: block;
+}

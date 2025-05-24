@@ -1,0 +1,98 @@
+body {
+  background-color: var(--dark-bg);
+
+  & > *,
+  & button,
+  & input,
+  & *::after,
+  & *::before {
+    background-color: inherit;
+  }
+}
+
+.menu-aside {
+  background-color: #373b53;
+  div:first-child {
+    background-color: #7c5dfa;
+    div {
+      background-color: #9277ff;
+    }
+  }
+}
+
+.invoice-content {
+  .heading-wrapper {
+    div.new-invoice-btn-wrapper {
+      background-color: var(--brand-purple);
+
+      & > button {
+        & > span {
+          background-color: white;
+        }
+        div {
+          background-color: rgba(30, 33, 57, 0.8);
+        }
+      }
+    }
+
+    .filter-box {
+      background-color: #1e2139;
+    }
+  }
+}
+
+.invoice-row,
+.receipt-details,
+.activity-btns-wrapper.bottom {
+  background-color: rgb(30, 33, 57);
+  border: none;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.i-status {
+  &.paid {
+    background-color: rgba(51, 214, 159, 0.1);
+  }
+
+  &.pending {
+    background-color: rgba(255, 143, 0, 0.1);
+  }
+
+  &.draft {
+    background-color: rgb(255, 255, 255, 0.1);
+  }
+}
+
+.invoice-box.form-box-opened {
+  &::after {
+    content: "";
+    position: fixed;
+    background-color: rgba(20, 22, 37, 0.6);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+aside.form-box {
+  background-color: var(--form-box-bg);
+  // fieldset generic styles
+  fieldset {
+    input {
+      background-color: var(--brand-input-bg);
+    }
+  }
+}
+
+.total-box {
+  background-color: black;
+}
+
+.new-item-btn {
+  &:hover {
+    background-color: #dfe3fa;
+  }
+}
