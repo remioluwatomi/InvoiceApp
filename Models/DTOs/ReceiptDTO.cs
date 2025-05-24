@@ -10,4 +10,5 @@ public class ReceiptDTO
     public required Client Client {get; set;}
     public required Biller Biller {get; set;}
     public required List<Item> Items {get; set;}
+    public required Decimal TotalPrice {get; set;}
 }

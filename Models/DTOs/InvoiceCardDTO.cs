@@ -6,6 +6,6 @@ public class InvoiceCardDTO
     public required InvoiceStatus Status {get; set;}
     public required Guid Uid {get; set;}
     public string? ClientName {get; set;}
-    public List<decimal>? ItemsPrices {get; set;} 
+    public Decimal? TotalPrice {get; set;}
     
 }

@@ -92,7 +92,8 @@ public class ReceiptModel : InvoiceIdValidatorBaseModelModel
                 Status = invoice.Status.ToString().ToLower(),
                 Biller = invoice.Biller!,
                 Items = invoice.Items.ToList(),
-                PaymentDate = invoice.InvoiceDate.AddDays(invoice.PaymentTerms)
+                PaymentDate = invoice.InvoiceDate.AddDays(invoice.PaymentTerms),
+                TotalPrice = invoice.Items.Sum(item => item.Price * item.Quantity),
             }; 
             return receiptDto;
         }
