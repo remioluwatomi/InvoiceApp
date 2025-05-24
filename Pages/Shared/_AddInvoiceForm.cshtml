@@ -1,0 +1,151 @@
+@model InvoiceApp.Models.Forms.InvoiceFormModels
+
+<aside class="form-box @(TempData["showInvoiceForm"] != null && (bool)TempData["showInvoiceForm"] ? "show" : "")">
+
+            <form id="invoice-form" method="post" asp-page="/">
+
+                <fieldset class="bill-from-fieldset">
+                    <legend>Bill From</legend>
+                    <div class="form-group street-address-wrapper">
+                        <label asp-for="Biller.StreetAddress">Street Address</label>
+                        <input asp-for="Biller.StreetAddress"  />
+                        <span asp-validation-for="Biller.StreetAddress" class="text-danger"></span>
+                    </div>
+
+                    <div class="mini-form-wrapper">
+                        <div class="form-group">
+                            <label asp-for="Biller.City">City</label>
+                            <input asp-for="Biller.City"  />
+                            <span asp-validation-for="Biller.City" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label  asp-for="Biller.PostCode">Post Code</label>
+                            <input  asp-for="Biller.PostCode"  />
+                            <span asp-validation-for="Biller.PostCode" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label  asp-for="Biller.Country">Country</label>
+                            <input  asp-for="Biller.Country"  />
+                            <span asp-validation-for="Biller.Country" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="bill-to-fieldset">
+                    <legend>Bill To</legend>
+
+                    <div class="form-group">
+                        <label  asp-for="Client.ClientName">Client's Name</label>
+                        <input  asp-for="Client.ClientName"  />
+                        <span asp-validation-for="Client.ClientName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label  asp-for="Client.ClientEmail">Client's Email</label>
+                        <input  asp-for="Client.ClientEmail"  />
+                        <span asp-validation-for="Client.ClientEmail" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label  asp-for="Client.StreetAddress">Street Address</label>
+                        <input  asp-for="Client.StreetAddress"  />
+                        <span asp-validation-for="Client.StreetAddress" class="text-danger"></span>
+                    </div>
+
+                    <div class="mini-form-wrapper">
+                        <div class="form-group">
+                            <label  asp-for="Client.City">City</label>
+                            <input  asp-for="Client.City"  />
+                            <span asp-validation-for="Client.City" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label  asp-for="Client.PostCode">Post Code</label>
+                            <input  asp-for="Client.PostCode"  />
+                            <span asp-validation-for="Client.PostCode" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label  asp-for="Client.Country">Country</label>
+                            <input  asp-for="Client.Country"  />
+                            <span asp-validation-for="Client.Country" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="bill-date">
+                    <div class="form-group">
+                        <label  asp-for="Invoice.InvoiceDate">Invoice Date</label>
+                        <input  asp-for="Invoice.InvoiceDate"  />
+                        <span asp-validation-for="Invoice.InvoiceDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label  asp-for="Invoice.PaymentTerms">Payment Terms</label>
+                        <input  asp-for="Invoice.PaymentTerms"  />
+                        <span asp-validation-for="Invoice.PaymentTerms" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label  asp-for="Invoice.ProjectDescription">Project Description</label>
+                        <input  asp-for="Invoice.ProjectDescription"  />
+                        <span asp-validation-for="Invoice.ProjectDescription" class="text-danger"></span>
+                    </div>
+
+                </fieldset>
+
+                <div class="bill-items-wrapper">
+                    <h2>Item List</h2>
+                    @for (int i = 0; i < Model.Items.Count; i++)
+                    {
+                        <fieldset class="item-fieldset" data-itemIndex="@i">
+                            
+                            <div class='form-group' data-name="Name">
+                                <label asp-for="Items[i].Name">Item Name</label>
+                                <input asp-for="Items[i].Name" />
+                                <span  asp-validation-for="Items[i].Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="mini-form-wrapper">
+                                <div class='form-group' data-name="Quantity">
+                                <label asp-for="Items[i].Quantity">Qty</label>
+                                <input asp-for="Items[i].Quantity" />
+                                <span asp-validation-for="Items[i].Quantity" class="text-danger"></span>
+                            </div>
+
+                            <div class='form-group' data-name="Price">
+                                <label asp-for="Items[i].Price">Price</label>
+                                <input asp-for="Items[i].Price" />
+                                <span asp-validation-for="Items[i].Price" class="text-danger"></span>
+                            </div>
+
+                            <div class='form-group readonly-form-group'>
+                                <label>Total</label>
+                                <input readonly/>
+                            </div>
+
+                            <button type="button" class="delete-item-wrapper" data-itemIndex="@i">
+                            <img alt="delete item" src="/assets/icon-delete.svg" /></button>
+                            </div>
+                        </fieldset>
+                    }
+
+                    
+                </div>
+
+                <div class="button-wrapper">
+                    <button type="button" class="new-item-btn">+ Add New Item</button>
+                </div>
+
+                <div class="form-footer-buttons-wrapper">
+                    <button type="button" class="form-btn discard-btn">Discard</button>
+                    <button type="button" class="form-btn draft-btn">Save as Draft</button>
+                    <button type="submit" class="form-btn save-btn">Save & Send</button>
+                </div>
+
+            </form>
+        </aside>
